@@ -2,31 +2,25 @@
 
 set -e
 
-BIN_PATH="$1/bin/"
-mkdir -p $BIN_PATH
-
 WKHTMLTOPDF_BINARY="http://sourceforge.net/projects/wkhtmltopdf/files/0.12.1/wkhtmltox-0.12.1.tar.bz2/download"
-WKHTMLTOPDF_PATH="bin/wkhtmltopdf"
-WKHTMLTOPDF_COMPRESSED_PATH="bin/wkhtmltopdf.tar.bz2"
-WKHTMLTOX_PATH="bin/wkhtmltox"
+WKHTMLTOPDF_PATH="tmp/wkhtmltopdf"
+WKHTMLTOPDF_COMPRESSED_PATH="tmp/wkhtmltopdf.tar.bz2"
+WKHTMLTOX_PATH="tmp/wkhtmltox"
 
 
 echo "-----> Transferring wkhtmltopdf compressed binary"
 curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_COMPRESSED_PATH
 
 echo "-----> Decompressing binary"
-tar xf $WKHTMLTOPDF_COMPRESSED_PATH --directory /bin
+tar xf $WKHTMLTOPDF_COMPRESSED_PATH --directory tmp/
 
 echo "-----> Removing compressed binary"
 rm -f $WKHTMLTOPDF_COMPRESSED_PATH
 
 echo "-----> Moving binary to the right place from wkhtmltox"
-mv $WKHTMLTOX_PATH/bin/wkhtmltopdf /bin
-
-echo "-----> Removing wkhtmltox folder"
-rm -rf $WKHTMLTOX_PATH
+mv tmp/wkhtmltox-0.12.1 bin/wkhtmltox-0.12.1
 
 echo "-----> Setting permissions"
-chmod +x $WKHTMLTOPDF_PATH
+chmod +x bin/wkhtmltox-0.12.1
 
 exit 0
