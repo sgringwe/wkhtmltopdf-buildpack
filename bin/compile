@@ -15,7 +15,7 @@ echo "-----> Transferring wkhtmltopdf compressed binary"
 curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_COMPRESSED_PATH
 
 echo "-----> Decompressing binary"
-tar xf $WKHTMLTOPDF_COMPRESSED_PATH --directory BIN_PATH
+tar xf $WKHTMLTOPDF_COMPRESSED_PATH --directory $BIN_PATH
 
 echo "-----> Removing compressed binary"
 rm -f $WKHTMLTOPDF_COMPRESSED_PATH
