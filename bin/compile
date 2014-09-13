@@ -8,7 +8,7 @@ mkdir -p $BIN_PATH
 WKHTMLTOPDF_BINARY="http://sourceforge.net/projects/wkhtmltopdf/files/0.12.1/wkhtmltox-0.12.1.tar.bz2/download"
 WKHTMLTOPDF_PATH="bin/wkhtmltopdf"
 WKHTMLTOPDF_COMPRESSED_PATH="bin/wkhtmltopdf.tar.bz2"
-WKHTMLTOX_PATH="bin/wkhtmltox"
+WKHTMLTOX_PATH="$1/bin/wkhtmltopdf"
 
 
 echo "-----> Transferring wkhtmltopdf compressed binary"
@@ -21,9 +21,9 @@ echo "-----> Removing compressed binary"
 rm -f $WKHTMLTOPDF_COMPRESSED_PATH
 
 echo "-----> Moving binary to the right place from wkhtmltox"
-mv $BIN_PATH/wkhtmltopdf bin/wkhtmltopdf
+mv $WKHTMLTOX_PATH $WKHTMLTOPDF_PATH
 
 echo "-----> Setting permissions"
-chmod +x bin/wkhtmltopdf
+chmod +x $WKHTMLTOPDF_PATH
 
 exit 0
