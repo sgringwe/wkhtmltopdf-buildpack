@@ -21,7 +21,7 @@ echo "-----> Removing compressed binary"
 rm -f $WKHTMLTOPDF_COMPRESSED_PATH
 
 echo "-----> Moving binary to the right place from wkhtmltox"
-mv $WKHTMLTOX_PATH/bin/wkhtmltopdf bin/wkhtmltopdf
+mv $BIN_PATH/wkhtmltopdf bin/wkhtmltopdf
 
 echo "-----> Setting permissions"
 chmod +x bin/wkhtmltopdf
