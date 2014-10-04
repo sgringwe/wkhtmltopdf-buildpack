@@ -7,7 +7,7 @@ CACHE_DIR=$2
 
 echo "-----> Compile params: $BUILD_DIR $CACHE_DIR"
 
-BIN_PATH="$1/vendor/"
+BIN_PATH="$1/vendor"
 
 mkdir -p $BIN_PATH
 
@@ -18,16 +18,16 @@ WKHTMLTOX_PATH="$BIN_PATH/wkhtmltox-0.12.1"
 
 
 echo "-----> Transferring wkhtmltopdf compressed binary"
-curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_COMPRESSED_PATH
+curl -L $WKHTMLTOPDF_BINARY -o $WKHTMLTOPDF_PATH
 
-echo "-----> Decompressing binary"
-tar xf $WKHTMLTOPDF_COMPRESSED_PATH --directory $BIN_PATH
+# echo "-----> Decompressing binary"
+# tar xf $WKHTMLTOPDF_COMPRESSED_PATH --directory $BIN_PATH
 
-echo "-----> Removing compressed binary"
-rm -f $WKHTMLTOPDF_COMPRESSED_PATH
+# echo "-----> Removing compressed binary"
+# rm -f $WKHTMLTOPDF_COMPRESSED_PATH
 
-echo "-----> Moving binary to the right place from wkhtmltox"
-mv $WKHTMLTOX_PATH $WKHTMLTOPDF_PATH
+# echo "-----> Moving binary to the right place from wkhtmltox"
+# mv $WKHTMLTOX_PATH $WKHTMLTOPDF_PATH
 
 echo "-----> Setting permissions"
 chmod +x $WKHTMLTOPDF_PATH
@@ -38,7 +38,7 @@ echo "${2}"
 echo "${3}"
 echo "${BIN_PATH}"
 echo "${WKHTMLTOPDF_PATH}"
-echo `${WKHTMLTOPDF_PATH} -v`
+echo `${WKHTMLTOPDF_PATH} -V`
 echo "----> Stuff printed"
 
 exit 0
