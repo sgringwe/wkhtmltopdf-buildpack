@@ -1,7 +1,13 @@
+# Changes made in this branch
+
+
+
 # WKHTMLTOPDF Buildpack
 
 This is a [Heroku buildpack][0] for bundling a compatible [wkhtmltopdf][1]
 binary with your environment.
+
+Forked from https://github.com/dkaufman/wkhtmltopdf-buildpack.
 
 ## Versions
 
@@ -12,7 +18,7 @@ binary with your environment.
 
 ```bash
 $ heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
-$ echo 'https://github.com/dscout/wkhtmltopdf-buildpack.git' >> .buildpacks
+$ echo 'https://github.com/sgringwe/wkhtmltopdf-buildpack.git' >> .buildpacks
 $ echo 'https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/ruby.tgz' >> .buildpacks
 $ git add .buildpacks
 $ git commit -m 'Add multi-buildpack'

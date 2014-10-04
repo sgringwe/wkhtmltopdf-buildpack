@@ -26,4 +26,6 @@ mv $WKHTMLTOX_PATH $WKHTMLTOPDF_PATH
 echo "-----> Setting permissions"
 chmod +x $WKHTMLTOPDF_PATH
 
+echo $WKHTMLTOPDF_PATH
+
 exit 0
