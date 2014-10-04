@@ -4,6 +4,9 @@ set -e
 
 BUILD_DIR=$1
 CACHE_DIR=$2
+
+echo "-----> Compile params: $BUILD_DIR $CACHE_DIR"
+
 BIN_PATH="$1/bin/"
 
 mkdir -p $BIN_PATH
@@ -31,9 +34,11 @@ chmod +x $WKHTMLTOPDF_PATH
 
 echo `pwd`
 echo "${1}"
+echo "${2}"
+echo "${3}"
 echo "${BIN_PATH}"
 echo "${WKHTMLTOPDF_PATH}"
-echo `wkhtmltopdf -v`
+echo `${WKHTMLTOPDF_PATH} -v`
 echo "----> Stuff printed"
 
 exit 0
