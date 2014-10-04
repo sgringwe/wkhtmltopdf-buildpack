@@ -2,13 +2,16 @@
 
 set -e
 
+BUILD_DIR=$1
+CACHE_DIR=$2
 BIN_PATH="$1/bin/"
+
 mkdir -p $BIN_PATH
 
 WKHTMLTOPDF_BINARY="http://sourceforge.net/projects/wkhtmltopdf/files/0.12.1/wkhtmltox-0.12.1.tar.bz2/download"
-WKHTMLTOPDF_PATH="bin/wkhtmltopdf"
 WKHTMLTOPDF_COMPRESSED_PATH="bin/wkhtmltopdf.tar.bz2"
-WKHTMLTOX_PATH="$1/bin/wkhtmltox-0.12.1"
+WKHTMLTOPDF_PATH="$BIN_PATH/wkhtmltopdf"
+WKHTMLTOX_PATH="$BIN_PATH/wkhtmltox-0.12.1"
 
 
 echo "-----> Transferring wkhtmltopdf compressed binary"
@@ -29,6 +32,7 @@ chmod +x $WKHTMLTOPDF_PATH
 echo `pwd`
 echo "${1}"
 echo "${BIN_PATH}"
+echo "${WKHTMLTOPDF_PATH}"
 echo `wkhtmltopdf -v`
 echo "----> Stuff printed"
 
