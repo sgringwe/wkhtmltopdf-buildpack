@@ -7,12 +7,12 @@ CACHE_DIR=$2
 
 echo "-----> Compile params: $BUILD_DIR $CACHE_DIR"
 
-BIN_PATH="$1/bin/"
+BIN_PATH="$1/vendor/"
 
 mkdir -p $BIN_PATH
 
 WKHTMLTOPDF_BINARY="http://sourceforge.net/projects/wkhtmltopdf/files/0.12.1/wkhtmltox-0.12.1.tar.bz2/download"
-WKHTMLTOPDF_COMPRESSED_PATH="bin/wkhtmltopdf.tar.bz2"
+WKHTMLTOPDF_COMPRESSED_PATH="$BIN_PATH/wkhtmltopdf.tar.bz2"
 WKHTMLTOPDF_PATH="$BIN_PATH/wkhtmltopdf"
 WKHTMLTOX_PATH="$BIN_PATH/wkhtmltox-0.12.1"
 
