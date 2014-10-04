@@ -26,7 +26,10 @@ mv $WKHTMLTOX_PATH $WKHTMLTOPDF_PATH
 echo "-----> Setting permissions"
 chmod +x $WKHTMLTOPDF_PATH
 
-pwd
-wkhtmltopdf -v
+echo `pwd`
+echo "${1}"
+echo "${BIN_PATH}"
+echo `wkhtmltopdf -v`
+echo "----> Stuff printed"
 
 exit 0
